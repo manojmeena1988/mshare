@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - mShare</title>
+    <link rel="stylesheet" href="assets/style/css/style.css" />
+  </head>
+  <body>
+    <div id="loader">
+      <div class="centrize">
+        <div class="v-center">
+          <div id="mask">
+            <svg
+              class="preloader-icon"
+              width="34"
+              height="38"
+              viewbox="0 0 34 38"
+            >
+              <path
+                class="preloader-path"
+                stroke-dashoffset="0"
+                d="M29.437 8.114L19.35 2.132c-1.473-.86-3.207-.86-4.68 0L4.153 8.114C2.68 8.974 1.5 10.56 1.5 12.28v11.964c0 1.718 1.22 3.306 2.69 4.165l10.404 5.98c1.47.86 3.362.86 4.834 0l9.97-5.98c1.472-.86 2.102-2.45 2.102-4.168V12.28c0-1.72-.59-3.306-2.063-4.166z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page user-page">
+      <div class="header">
+        <div class="container">
+          <h3 class="text-center pt-5 fw-bold">Welcome to mShare</h3>
+        </div>
+      </div>
+      <div class="page-content">
+        <div class="container">
+          <div class="card mt-5">
+            <div class="card-body">
+              <h5 class="fw-bold">Andrew garfield</h5>
+              <div class="row mt-3">
+                <div class="col-md-4">Father name: <strong>Goe tailor</strong></div>
+                <div class="col-md-4">Mobile: <strong>1212211211</strong></div>
+                <div class="col-md-4">Total Shares: <strong>12</strong></div>
+              </div>
+            </div>
+          </div>
+          <nav class="nav nav-pills mt-5" id="nav-tab" role="tablist">
+            <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" href="#">Shares</a>
+            <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" href="#">EMI</a>
+            <a class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" href="#">Interest</a>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">shares Details</div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">EMI Details</div>
+            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">Interest Details</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/lib/bs5/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/layout.js"></script>
+  </body>
+</html>
