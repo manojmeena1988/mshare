@@ -1,0 +1,37 @@
+@import "../../lib/bs5/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;700&display=swap');
+
+$font: 'Poppins', sans-serif;
+
+body{
+    font-family: $font;
+}
+.form-group{
+    margin-bottom: 1rem;
+}
+
+.form-control{
+    
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.page{
+    min-height: 100vh;
+    // background-color: var(--bs-light);
+}
+.login-page{
+    
+    .form-wrapper{
+        padding: 100px 0;
+        max-width: 300px;
+        margin: 0 auto;
+        .title{
+            margin-bottom: 2rem;
+        }  
+        .has-error{
+            .form-control{
+                border-color: var(--bs-danger);
+            }
+        }      
+    }
+}
