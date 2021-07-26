@@ -1,0 +1,65 @@
+
+  <div id="loader">
+      <div class="centrize">
+        <div class="v-center">
+          <div id="mask">
+            <svg class="preloader-icon" width="34" height="38" viewbox="0 0 34 38">
+              <path class="preloader-path" stroke-dashoffset="0" d="M29.437 8.114L19.35 2.132c-1.473-.86-3.207-.86-4.68 0L4.153 8.114C2.68 8.974 1.5 10.56 1.5 12.28v11.964c0 1.718 1.22 3.306 2.69 4.165l10.404 5.98c1.47.86 3.362.86 4.834 0l9.97-5.98c1.472-.86 2.102-2.45 2.102-4.168V12.28c0-1.72-.59-3.306-2.063-4.166z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="page login-page">
+      <div class="header">
+          <div class="container">
+              <h3 class="text-center pt-5 fw-bold">Welcome to mShare</h3>                
+          </div>
+      </div>
+      <form #userForm="ngForm" (ngSubmit)="check(userForm.value)">
+      <div class="form-wrapper">
+          <div class="title">
+              <h2 class="">Login</h2>
+              <p><small>Enter your credentials here to access </small></p>
+          </div>
+          <div class="form-content">
+              <div class="form-group">
+                  <span class="form-control-wrap">
+                      <input type="text" name="usermobile_no"  #mobile_number="ngModel" id="mobile" ngModel class="form-control" required   placeholder="Mobile Number" >
+                  </span>
+                  <span 
+                  *ngIf="mobile_number.invalid && mobile_number.touched"
+                  class="error" style="color:rgb(149, 61, 61);">phone no. can't be empty</span>
+              </div>
+              <div class="form-group has-error">
+                  <span class="form-control-wrap">
+                      <input type="password" name="password" id="pass" #Password="ngModel" ngModel required class="form-control" placeholder="Password">
+                  </span>
+                  
+                  <span 
+                  *ngIf="Password.invalid && Password.touched"
+                  class="error" style="color:rgb(149, 61, 61);">password can't be empty</span>
+              </div>
+              <span>{{warning}}</span>
+              <div class="form-group">
+                  <span class="form-control-wrap d-grid">
+                      <button id="" class="btn btn-primary" type="submit" > Login</button>
+                      <!-- <input type="button" id="" class="btn btn-primary" value="Login"> -->
+                  </span>
+              </div>
+              <div class="text-center"><small><a routerLink="/resetpassword" class="btn btn-link btn-sm"  (click)="sentotp()">Forgot Password</a></small></div>
+          </div>
+      </div>
+  </form>
+  </div>
+  <!-- <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+  ></script>
+   <script src="/src/assets/js/layout.js"></script> -->
+
+
+
+
