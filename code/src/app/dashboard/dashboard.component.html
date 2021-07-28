@@ -45,11 +45,12 @@
          
 <!-- show  only searched user -->
 
-        <div class="container hide" >
+        <div class="container " >
           <ul class="list-group list-group-flush mt-5">
             <div class="container" style="padding: 100px;">
               <table class="table table-striped" style="margin-left:40px;;">
                 <thead>
+               
                   <tr>
                     <th scope="col">id</th>
                     <th scope="col">Name</th>
@@ -57,7 +58,11 @@
                     <th scope="col">Phone No.</th>
                   </tr>
                 </thead>
+                <p >0 result found</p>
                 <tbody id="tbody">
+
+                
+
                   <tr *ngFor="let userdetail of userdetail">
                        
                     <td>{{userdetail.id}}</td>
@@ -67,35 +72,13 @@
                     <td> <button (click)="delete( userdetail)">Delete</button>  </td>
                   </tr> 
                 </tbody>
-              </table>    
+              </table> 
+                
             </div>
           </ul>
        </div>        
-                
-        <!-- <p class="hide" style="color:black; text-align: center;"> No Results found </p> -->
-        <!-- show all user's detail  -->            
-        <!-- <ul class="list-group list-group-flush mt-5" id="mt-5">
-            <div class="container" style="padding: 100px;">
-               <table class="table table-striped" style="margin-left:40px;;">
-                    <thead>
-                      <tr>
-                        <th scope="col">id</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email Id</th>
-                        <th scope="col">Phone No.</th>
-                       </tr>
-                    </thead>
-                    <tbody>
-                      <tr *ngFor="let ShowUserData of ShowUserData">
-                        <td>{{ShowUserData.id}}</td>
-                        <td>{{ShowUserData.name}}</td>
-                        <td>{{ShowUserData.email}}</td>
-                        <td>{{ShowUserData.phone_no}}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </ul> -->
+              
+       
             </div>
           </div>
         </div>            

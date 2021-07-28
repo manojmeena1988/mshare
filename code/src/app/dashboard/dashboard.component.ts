@@ -13,18 +13,14 @@ export class DashboardComponent implements OnInit {
   InputBoxValue:any;
  
    constructor(private appservice:UserService) {
-     this. showUser(); //call function 
+     
  }
  
    ngOnInit(): void {
    }
  
  
-   showUser(){
-     this.appservice.getUser().subscribe((data: any)=>{ 
-      this.ShowUserData=data;
-     })
-     }
+   
  
  Search(username:any)
  {
@@ -32,12 +28,18 @@ export class DashboardComponent implements OnInit {
  
  this.appservice.getSelectedUser( this.selectedUserName).subscribe((data: any)=>{ 
   this.userdetail=data;
+  console.log(this.userdetail[0]['OTP']);
+  this.InputBoxValue=" ";
+  if(this.userdetail[0]['OTP']==6767){
+   
+    $("P").addClass("hide");
+  }
  }) 
  
  //jquery code
-  $("div").removeClass("hide");
-  $("div").addClass("show");
-   this.InputBoxValue=" ";
+  // $("div").removeClass("hide");
+  // $("div").addClass("show");
+  //  this.InputBoxValue=" ";
  }
 
 

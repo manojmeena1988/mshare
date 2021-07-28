@@ -11,8 +11,7 @@ if ($conn->connect_error) {
 }
 
 $username=$post->username;
-//query
-$sql = "SELECT id, name, phone_no ,email FROM user WHERE name='".$username."'";
+$sql = "SELECT id, name, mobile_number ,email,OTP FROM user WHERE name='".$username."'";
 $result = $conn->query($sql);
 
 $myArr = array();
@@ -20,9 +19,13 @@ if ($result->num_rows > 0) {
 while($row = $result->fetch_assoc()) {
 $myArr[] = $row;
 }
+
 //response
+
+}
+else{
+  $myArr="0 result found";
+} 
 $myJSON = json_encode($myArr);
 echo $myJSON;
-} 
-
 ?>
