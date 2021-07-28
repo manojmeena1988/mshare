@@ -1,0 +1,82 @@
+<div id="loader">
+    <div class="centrize">
+      <div class="v-center">
+        <div id="mask">
+          <svg class="preloader-icon" width="34" height="38" viewbox="0 0 34 38">
+            <path class="preloader-path" stroke-dashoffset="0" d="M29.437 8.114L19.35 2.132c-1.473-.86-3.207-.86-4.68 0L4.153 8.114C2.68 8.974 1.5 10.56 1.5 12.28v11.964c0 1.718 1.22 3.306 2.69 4.165l10.404 5.98c1.47.86 3.362.86 4.834 0l9.97-5.98c1.472-.86 2.102-2.45 2.102-4.168V12.28c0-1.72-.59-3.306-2.063-4.166z"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="page login-page">
+    <div class="header">
+        <div class="container">
+            <h4 class="text-center pt-5 fw-bold">Add User </h4>                
+        </div>
+    </div>
+    <div class="form-wrapper">
+        <div class="title">
+          
+            <p><small>Enter your Detail </small></p>
+        </div>
+        <form #userForm="ngForm" (ngSubmit)="add(userForm.value)">
+        <div class="form-content">
+            <div class="form-group">
+                <span class="form-control-wrap">
+                    <input type="text" name="username" id="" ngModel class="form-control" placeholder="enter username">
+                </span>
+            </div>
+
+            <div class="form-group">
+                <span class="form-control-wrap">
+                    <input type="text" name="userphone_no" id="" ngModel  class="form-control" placeholder="Mobile Number">
+                </span>
+            </div>
+            <div class="form-group">
+                <span class="form-control-wrap">
+                    <input type="text" name="useremail" id="" ngModel  class="form-control" placeholder="enter user email">
+                </span>
+            </div>
+            <p class="hide" style="color:rgb(139, 25, 25) ; margin: 10px;" >user already exist</p>
+            <div class="form-group">
+                <span class="form-control-wrap d-grid">
+                    <button id="" class="btn btn-primary" type="submit" > Add User</button>
+                    
+                </span>
+            </div>
+           
+        </div>
+        </form>
+    </div>
+</div>
+<div class="container" style="padding: 100px;">
+    <h4  style="text-align: center;">ALL USERS </h4><br>
+    <table class="table table-striped" style="margin-left:40px;;">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email Id</th>
+            <th scope="col">Phone No.</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ShowUserData of ShowUserData">
+           
+            <td>{{ShowUserData.id}}</td>
+            <td>{{ShowUserData.name}}</td>
+            <td>{{ShowUserData.email}}</td>
+            <td>{{ShowUserData.phone_no}}</td>
+            
+            <td><button (click)="delete(ShowUserData)">Delete</button></td>
+          </tr>
+         
+          
+        </tbody>
+      </table>
+      
+</div>
+
