@@ -5,7 +5,7 @@ header("Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, Ca
 header("Access-Control-Allow-Methods: GET, POST");
 $post  = json_decode(file_get_contents('php://input'));
 
-$conn = new mysqli("localhost", "root","", "user");
+$conn = new mysqli("localhost", "root","", "project2");
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
@@ -13,7 +13,7 @@ if ($conn->connect_error) {
  $password=$post->password;
 
 
-$sql="SELECT * FROM login WHERE mobile_number='". $user_mobile_number."'AND password= '". $password."'";
+$sql="SELECT * FROM user WHERE mobile_number='". $user_mobile_number."'AND password= '". $password."'";
 $result=mysqli_query($conn, $sql);
 
 $myArr = array();
