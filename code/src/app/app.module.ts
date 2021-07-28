@@ -10,9 +10,11 @@ import { Routes,RouterModule } from "@angular/router";
 
  import { UserService } from './user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
 const appRoutes:Routes=[
 {path: '',component:LoginComponent},
-{path: 'resetpassword',component:ForgotpasswordComponent}
+{path: 'resetpassword',component:ForgotpasswordComponent},
+{path:'dashboard',component:   DashboardComponent }
 
 ];
 @NgModule({
@@ -20,6 +22,7 @@ const appRoutes:Routes=[
     AppComponent,
     ForgotpasswordComponent,
     LoginComponent,
+    DashboardComponent,
    
   ],
   imports: [

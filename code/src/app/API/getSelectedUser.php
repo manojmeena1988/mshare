@@ -4,29 +4,25 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, Cache-Control, Pragma, Authorization, Accept, Accept-Encoding");
 header("Access-Control-Allow-Methods: GET, POST");
 $post  = json_decode(file_get_contents('php://input'));
-
-$conn = new mysqli("localhost", "root","", "user");
+//database connection
+$conn = new mysqli("localhost", "root","", "project2");
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
- $user_mobile_number=$post->usermobile_no;
- $password=$post->password;
 
-
-$sql="SELECT * FROM login WHERE mobile_number='". $user_mobile_number."'AND password= '". $password."'";
-$result=mysqli_query($conn, $sql);
+$username=$post->username;
+//query
+$sql = "SELECT id, name, phone_no ,email FROM user WHERE name='".$username."'";
+$result = $conn->query($sql);
 
 $myArr = array();
 if ($result->num_rows > 0) {
-// output data of each row
 while($row = $result->fetch_assoc()) {
 $myArr[] = $row;
-
 }
-} else {
-$myArr= "0 results";
-}
+//response
 $myJSON = json_encode($myArr);
 echo $myJSON;
+} 
 
 ?>

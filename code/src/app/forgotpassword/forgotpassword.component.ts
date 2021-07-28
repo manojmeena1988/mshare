@@ -1,6 +1,6 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+
 import { Component, OnInit } from '@angular/core';
-import{FormControl,Validators,FormGroup} from '@angular/forms'
+
 import { UserService } from '../user.service';
 @Component({
   selector: 'app-forgotpassword',

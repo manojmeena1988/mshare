@@ -7,8 +7,8 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
 
-  public select(){
-    return this.http.post('http://localhost/PROJECT1/src/app/API/login.php',{headers: {
+  public select(data:any){
+    return this.http.post('http://localhost/PROJECT1/src/app/API/login.php',data,{headers: {
       'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'  }});
 
    }
@@ -17,4 +17,21 @@ export class UserService {
       'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'  }});
 
    }
+   public getUser(){
+    return this.http.post('http://localhost/PROJECT1/src/app/API/showUser.php',{headers: {
+      'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'  }});
+
+   }
+
+getSelectedUser(username:any){
+  return this.http.post('http://localhost/PROJECT1/src/app/API/getSelectedUser.php',username,{headers: {
+    'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'  }});
+}
+
+public delete(data:any){
+  return this.http.post('http://localhost/PROJECT1/src/app/API/deleteUser.php',data,{headers: {
+    'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'  }});
+
+ }
+
 }
