@@ -1,0 +1,106 @@
+<div id="loader">
+    <div class="centrize">
+      <div class="v-center">
+        <div id="mask">
+          <svg
+            class="preloader-icon"
+            width="34"
+            height="38"
+            viewbox="0 0 34 38"
+          >
+            <path
+              class="preloader-path"
+              stroke-dashoffset="0"
+              d="M29.437 8.114L19.35 2.132c-1.473-.86-3.207-.86-4.68 0L4.153 8.114C2.68 8.974 1.5 10.56 1.5 12.28v11.964c0 1.718 1.22 3.306 2.69 4.165l10.404 5.98c1.47.86 3.362.86 4.834 0l9.97-5.98c1.472-.86 2.102-2.45 2.102-4.168V12.28c0-1.72-.59-3.306-2.063-4.166z"
+            ></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page dashboard-page">
+    <div class="container">
+      <div class="header">
+        <h3 class="text-center pt-5 fw-bold">Welcome to mShare</h3>
+      </div>
+      <div class="form-wrapper">
+        <form class="row g-3" #userForm="ngForm" (ngSubmit)="Search(userForm.value)">
+          <div class="col">
+            <label for="Username" class="visually-hidden">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              id="Username"
+              name="username"
+              ngModel
+              placeholder="Username"
+              [(ngModel)]="InputBoxValue">
+            </div>
+                 <div class="col-auto">
+              <button type="submit" class="btn btn-primary mb-3"  >Search</button>
+            </div>
+       </form>
+            
+         
+<!-- show  only searched user -->
+
+        <div class="container hide" >
+          <ul class="list-group list-group-flush mt-5">
+            <div class="container" style="padding: 100px;">
+              <table class="table table-striped" style="margin-left:40px;;">
+                <thead>
+                  <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email Id</th>
+                    <th scope="col">Phone No.</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody">
+                  <tr *ngFor="let userdetail of userdetail">
+                       
+                    <td>{{userdetail.id}}</td>
+                    <td>{{userdetail.name}}</td>
+                    <td>{{userdetail.email}}</td>
+                    <td>{{userdetail.phone_no}}</td>
+
+                  </tr> 
+                </tbody>
+              </table>    
+            </div>
+          </ul>
+       </div>        
+                
+        <!-- <p class="hide" style="color:black; text-align: center;"> No Results found </p> -->
+        <!-- show all user's detail  -->            
+        <ul class="list-group list-group-flush mt-5" id="mt-5">
+            <div class="container" style="padding: 100px;">
+               <table class="table table-striped" style="margin-left:40px;;">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email Id</th>
+                        <th scope="col">Phone No.</th>
+                       </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let ShowUserData of ShowUserData">
+                        <td>{{ShowUserData.id}}</td>
+                        <td>{{ShowUserData.name}}</td>
+                        <td>{{ShowUserData.email}}</td>
+                        <td>{{ShowUserData.phone_no}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>            
+                   
+      
+                      
+              
+  
