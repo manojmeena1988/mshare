@@ -34,6 +34,11 @@ export class DashboardComponent implements OnInit {
   if(this.userdetail[0]['OTP']==6767){
    
     $("P").addClass("hide");
+    $("#tbody").removeClass("hide");
+  }
+  else{
+    $("P").removeClass("hide");
+    $("#tbody").addClass("hide");
   }
  }) 
  
