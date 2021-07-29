@@ -1,8 +1,7 @@
 @import "../../lib/bs5/scss/bootstrap.scss";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;700&display=swap');
 
-$font: 'Poppins',
-sans-serif;
+$font: 'Poppins', sans-serif;
 
 body {
     font-family: $font;
@@ -108,9 +107,16 @@ body {
         margin: 0 auto;
     }
 }
-.user-page{
-    
-    .tab-content{
+
+.user-page {
+    .page-content {
+        max-width: 375px;
+        margin: 0 auto;
+    }
+
+    .tab-content {
         margin-top: 2rem;
+
+        .form-wrapper {}
     }
 }

@@ -10817,6 +10817,10 @@ body {
   margin: 0 auto;
 }
 
+.user-page .page-content {
+  max-width: 375px;
+  margin: 0 auto;
+}
 .user-page .tab-content {
   margin-top: 2rem;
 }
