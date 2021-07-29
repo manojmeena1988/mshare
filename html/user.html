@@ -56,7 +56,7 @@
               type="button"
               role="tab"
               href="#"
-              >Shares</a
+              >Deposit</a
             >
             <a
               class="nav-link"
@@ -66,18 +66,9 @@
               type="button"
               role="tab"
               href="#"
-              >EMI</a
+              >Withdraw</a
             >
-            <a
-              class="nav-link"
-              id="nav-contact-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#nav-contact"
-              type="button"
-              role="tab"
-              href="#"
-              >Interest</a
-            >
+            
           </nav>
           <div class="tab-content" id="nav-tabContent">
             <div
@@ -86,6 +77,7 @@
               role="tabpanel"
               aria-labelledby="nav-home-tab"
             >
+            <label for="">Share</label>
               <div class="form-wrapper">
                 <div class="form-group">
                   <span class="form-control-wrap">
@@ -93,30 +85,12 @@
                       type="text"
                       name="userid"
                       class="form-control"
-                      placeholder="Total shares"
+                      placeholder="No. of shares"
                     />
                   </span>
                 </div>
-                <div class="form-group">
-                  <span class="form-control-wrap">
-                    <input
-                      type="text"
-                      name="userid"
-                      class="form-control"
-                      placeholder="Now paying"
-                    />
-                  </span>
-                </div>
-                <div class="form-group">
-                  <span class="form-control-wrap">
-                    <input
-                      type="text"
-                      name="userid"
-                      class="form-control"
-                      placeholder="Pending share"
-                    />
-                  </span>
-                </div>
+                
+               
                 <div class="form-group">
                   <span class="form-control-wrap">
                     <input
@@ -127,6 +101,86 @@
                     />
                   </span>
                 </div>
+                            
+              </div>
+
+              <label for="">EMI</label>
+              <div class="form-wrapper">                
+                <div class="form-group">
+                  <span class="form-control-wrap">
+                    <input
+                      type="text"
+                      name="userid"
+                      class="form-control"
+                      placeholder="Total amount borrow"
+                    />
+                  </span>
+                </div>
+                <div class="form-group">
+                  <span class="form-control-wrap">
+                    <input
+                      type="text"
+                      name="userid"
+                      class="form-control"
+                      placeholder="# EMI / 12"
+                    />
+                  </span>
+                </div>
+                <div class="form-group">
+                  <span class="form-control-wrap">
+                    <input
+                      type="text"
+                      name="userid"
+                      class="form-control"
+                      placeholder="Emi amount"
+                    />
+                  </span>
+                </div>
+                <div class="form-group">
+                  <span class="form-control-wrap">
+                    <input
+                      type="text"
+                      name="userid"
+                      class="form-control"
+                      placeholder="Penalty"
+                    />
+                  </span>
+                </div>                
+              </div>
+
+              <label for="">Interest</label>  
+              <div class="form-wrapper">                              
+                <div class="form-group">
+                  <span class="form-control-wrap">
+                    <input
+                      type="text"
+                      name="userid"
+                      class="form-control"
+                      placeholder="Total amount withdrawn"
+                    />
+                  </span>
+                </div>
+                <div class="form-group">
+                  <span class="form-control-wrap">
+                    <input
+                      type="text"
+                      name="userid"
+                      class="form-control"
+                      placeholder="Principal"
+                    />
+                  </span>
+                </div>
+                <div class="form-group">
+                  <span class="form-control-wrap">
+                    <input
+                      type="text"
+                      name="userid"
+                      class="form-control"
+                      placeholder="Interest"
+                    />
+                  </span>
+                </div>
+                
                 <div class="form-group">
                   <span class="form-control-wrap">
                     <input
@@ -155,65 +209,6 @@
               role="tabpanel"
               aria-labelledby="nav-profile-tab"
             >
-              <div class="form-wrapper">
-                <div class="form-group">
-                  <span class="form-control-wrap">
-                    <input
-                      type="text"
-                      name="userid"
-                      class="form-control"
-                      placeholder="Total amount borrow"
-                    />
-                  </span>
-                </div>
-                <div class="form-group">
-                  <span class="form-control-wrap">
-                    <input
-                      type="text"
-                      name="userid"
-                      class="form-control"
-                      placeholder="EMI Paid / 12"
-                    />
-                  </span>
-                </div>
-                <div class="form-group">
-                  <span class="form-control-wrap">
-                    <input
-                      type="text"
-                      name="userid"
-                      class="form-control"
-                      placeholder="Emi amount"
-                    />
-                  </span>
-                </div>
-                <div class="form-group">
-                  <span class="form-control-wrap">
-                    <input
-                      type="text"
-                      name="userid"
-                      class="form-control"
-                      placeholder="Note"
-                    />
-                  </span>
-                </div>
-                <div class="form-group">
-                  <span class="form-control-wrap d-grid">
-                    <input
-                      type="button"
-                      id=""
-                      class="btn btn-primary"
-                      value="Save"
-                    />
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="tab-pane fade"
-              id="nav-contact"
-              role="tabpanel"
-              aria-labelledby="nav-contact-tab"
-            >
             <div class="form-wrapper">
               <div class="form-group">
                 <span class="form-control-wrap">
@@ -221,30 +216,26 @@
                     type="text"
                     name="userid"
                     class="form-control"
-                    placeholder="Total amount withdrawn"
+                    placeholder="Total amount "
                   />
                 </span>
               </div>
               <div class="form-group">
                 <span class="form-control-wrap">
-                  <input
-                    type="text"
+                  <select
+                   
                     name="userid"
                     class="form-control"
-                    placeholder="Interest"
-                  />
+                    placeholder="Type"
+                  >
+                  <option value="">Withdraw Type</option>
+                <option value="">EMI</option>
+                <option value="">Interest</option>
+                </select>
+
                 </span>
               </div>
-              <div class="form-group">
-                <span class="form-control-wrap">
-                  <input
-                    type="text"
-                    name="userid"
-                    class="form-control"
-                    placeholder="Total amount to be pay"
-                  />
-                </span>
-              </div>
+              
               <div class="form-group">
                 <span class="form-control-wrap">
                   <input
@@ -267,6 +258,7 @@
               </div>
             </div>
             </div>
+            
           </div>
         </div>
       </div>
