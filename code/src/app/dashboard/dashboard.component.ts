@@ -28,6 +28,7 @@ export class DashboardComponent implements OnInit {
  
  this.appservice.getSelectedUser( this.selectedUserName).subscribe((data: any)=>{ 
   this.userdetail=data;
+  console.log(this.userdetail);
   console.log(this.userdetail[0]['OTP']);
   this.InputBoxValue=" ";
   if(this.userdetail[0]['OTP']==6767){

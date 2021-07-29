@@ -33,7 +33,9 @@ export class LoginComponent implements OnInit {
     }
 
     if(datafrominput['usermobile_no']== this.mobile_number&& datafrominput['password']==  this.password){
+      
     this.router.navigate(['dashboard']); 
+    
         }
         else{
     $("div").addClass("has-error");
