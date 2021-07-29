@@ -43,14 +43,7 @@ export class LoginComponent implements OnInit {
    
   })
 
-  //  if(datafrominput.usermobile_no==" " && datafrominput.password==" "){
-  //  this.warning=" enter  credentials";
-  // $("div").addClass("has-error");
-  //  }
-  // else{
-  //   this.warning=" ";
-  //   $("div").removeClass("has-error");
-  //  }   
+   
 }
 
 

@@ -1,0 +1,77 @@
+<app-animation></app-animation>
+
+  <div class="page login-page">
+      <div class="header">
+          <div class="container">
+              <h3 class="text-center pt-5 fw-bold">Welcome to mShare</h3>                
+          </div>
+      </div>
+      <form #userForm="ngForm" (ngSubmit)="add(userForm.value)">
+      <div class="form-wrapper">
+          <div class="title">
+              <h2 class="">Register</h2>
+              <p><small>Enter your detail here  </small></p>
+          </div>
+          <div class="form-content">
+
+            <div class="form-group">
+                <span class="form-control-wrap">
+                    <input type="text" name="username"  #username="ngModel" id="username" ngModel class="form-control" required   placeholder="user name" >
+                </span>
+                <span 
+                *ngIf="username.invalid && username.touched"
+                class="error" style="color:rgb(211, 61, 61);">user name can't be empty</span>
+            </div>
+              <div class="form-group">
+                  <span class="form-control-wrap">
+                      <input type="text" name="usermobile_no"  #mobile_number="ngModel" id="mobile" ngModel class="form-control" required   placeholder="Mobile Number" >
+                  </span>
+                  <span 
+                  *ngIf="mobile_number.invalid && mobile_number.touched"
+                  class="error" style="color:rgb(211, 61, 61);">user phone_no can't be empty</span>
+                  
+              </div>
+              <div class="form-group">
+                <span class="form-control-wrap">
+                    <input type="text" name="useremail"  #useremail="ngModel" id="email" ngModel class="form-control" required   placeholder="user email" >
+                </span>
+                <span 
+                *ngIf="useremail.invalid && useremail.touched"
+                class="error" style="color:rgb(211, 61, 61);">user email can't be empty</span>
+                
+            </div>
+              <div class="form-group ">
+                  <span class="form-control-wrap">
+                      <input type="password" name="password" id="pass" #Password="ngModel" ngModel required class="form-control" placeholder="Password">
+                  </span>
+                  <span 
+                  *ngIf="Password.invalid && Password.touched"
+                  class="error" style="color:rgb(211, 61, 61);">password can't be empty</span>
+              </div>
+              <div class="form-group ">
+                <span class="form-control-wrap">
+                    <input type="password" name="confirmpassword" id="confirmpass" #confirmPassword="ngModel" ngModel required class="form-control" placeholder=" confirmPassword">
+                </span>
+                <span 
+                *ngIf="confirmPassword.invalid && confirmPassword.touched"
+                class="error" style="color:rgb(211, 61, 61);">confirm password can't be empty</span>
+            </div>
+                
+            </div>
+            <p style="color: rgb(211, 61, 61);">{{ error}}</p>
+              <div class="form-group">
+                  <span class="form-control-wrap d-grid">
+                      <button id="" class="btn btn-primary" type="submit"> Add</button>
+                      
+                  </span>
+              </div>
+           
+              <!-- <div class="text-center"><small><a routerLink="resetpassword" class="btn btn-link btn-sm"  (click)="sentotp()">Forgot Password</a></small></div> -->
+          </div>
+      
+  </form>
+  </div>
+
+
+
+

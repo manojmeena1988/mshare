@@ -13,7 +13,7 @@ warning:any;
 error:any;
 
   constructor(private appservice:UserService) {
-    console.log("workum");
+    
    }
 
   ngOnInit(): void {
