@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 }
 
 $username=$post->username;
-$sql = "SELECT id, name, mobile_number ,email,OTP FROM user WHERE name='".$username."'";
+$sql = "SELECT id, name, mobile_number ,father_name,OTP,total_shares FROM user WHERE name='".$username."'";
 $result = $conn->query($sql);
 
 $myArr = array();

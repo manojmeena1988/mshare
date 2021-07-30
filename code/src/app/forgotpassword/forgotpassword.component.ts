@@ -43,30 +43,7 @@ error:any;
     }
 
   }
-    
-    // if((DATA.userid==" " )&& (DATA.password==" ") && (DATA. confirm_password==" ") && (DATA.OTP ==" ")){
- 
-    //   this.error ="Please Enter  Credentials";
-    //  }
-    //  else{
-    //    this.error=" ";
-
-    //    if(DATA.password==DATA.confirm_password){
-    //     this.warning=" ";
-    //     this.appservice.reset(DATA).subscribe((data: any)=>{ 
-    //       this.Data=data;
-    //       alert(this.Data) ;
-    //       if(this.Data=="password updated"){
-    //         window.location.reload();
-    //       }
-    //      })
-    //   }else{
-    //     this.warning="password not match";
-    //   }
-      // }
-
-
-
+  
 
   }
 }

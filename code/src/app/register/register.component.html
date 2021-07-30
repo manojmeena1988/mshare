@@ -33,11 +33,20 @@
               </div>
               <div class="form-group">
                 <span class="form-control-wrap">
-                    <input type="text" name="useremail"  #useremail="ngModel" id="email" ngModel class="form-control" required   placeholder="user email" >
+                    <input type="text" name="useremail"  #useremail="ngModel" id="email" ngModel class="form-control" required   placeholder="user father name" >
                 </span>
                 <span 
                 *ngIf="useremail.invalid && useremail.touched"
-                class="error" style="color:rgb(211, 61, 61);">user email can't be empty</span>
+                class="error" style="color:rgb(211, 61, 61);">user father name can't be empty</span>
+                
+            </div>
+            <div class="form-group">
+                <span class="form-control-wrap">
+                    <input type="text" name="total_shares"  #total_shares="ngModel" id="total_shares" ngModel class="form-control" required   placeholder="enter total no. of shares" >
+                </span>
+                <span 
+                *ngIf="total_shares.invalid && total_shares.touched"
+                class="error" style="color:rgb(211, 61, 61);">user total no. of shares can't be empty</span>
                 
             </div>
               <div class="form-group ">

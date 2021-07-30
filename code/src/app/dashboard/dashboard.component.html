@@ -1,3 +1,5 @@
+
+
 <!-- <div id="loader">
     <div class="centrize">
       <div class="v-center">
@@ -19,7 +21,7 @@
     </div>
   </div> -->
   <app-animation></app-animation>
-  
+
   <div class="page dashboard-page">
     <div class="container">
       <div class="header">
@@ -82,8 +84,9 @@
                   <tr>
                     <th scope="col">id</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Email Id</th>
+                    <th scope="col">Father name</th>
                     <th scope="col">Phone No.</th>
+                    <th scope="col">Total Shares</th>
                   </tr>
                 </thead>
           
@@ -95,10 +98,10 @@
                   <tr *ngFor="let userdetail of userdetail">
                        
                     <td>{{userdetail.id}}</td>
-                    <td><a routerLink="user"> {{userdetail.name}}</a></td>
-                    <td>{{userdetail.email}}</td>
+                    <td><a routerLink="user" [state]="{ data: userdetail.id}" > {{userdetail.name}}</a></td>
+                    <td>{{userdetail.father_name}}</td>
                     <td>{{userdetail.mobile_number}}</td>
-                  
+                    <td>{{userdetail.total_shares}}</td>
                   </tr> 
                 </tbody>
                
@@ -111,6 +114,7 @@
        
             </div>
           </div>
-        </div>            
-                   
+        </div>  
+              
+       
       

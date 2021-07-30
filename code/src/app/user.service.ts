@@ -43,5 +43,15 @@ public delete(data:any){
     'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'  }});
 
  }
+ public sendId(data:any ){
+  return this.http.post('http://localhost/PROJECT1/src/app/API/getuserId.php',data,{headers: {
+    'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'  }});
+
+ }
+ public getUserData( ){
+  return this.http.post('http://localhost/PROJECT1/src/app/API/getuserId.php',{headers: {
+    'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'  }});
+
+ }
 
 }

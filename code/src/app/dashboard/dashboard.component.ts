@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
-import { Autocomplete } from 'src/app/autocomplete';
+
 declare var $:any;
 @Component({
   selector: 'app-dashboard',
@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
  }
  
    ngOnInit(): void {
-   
+    
     }
  
  
@@ -32,63 +32,54 @@ export class DashboardComponent implements OnInit {
  Search(username:any)
  {
  this. selectedUserName=username;
- 
  this.appservice.getSelectedUser( this.selectedUserName).subscribe((data: any)=>{ 
   this.userdetail=data;
-  console.log(this.userdetail);
-  console.log(this.userdetail[0]['OTP']);
+  
   this.InputBoxValue=" ";
   if(this.userdetail[0]['OTP']==6767){
    
-    $("P").addClass("hide");
-    $("#tbody").removeClass("hide");
+    $("P").hide();
+    $("#tbody").show();
   }
   else{
-    $("P").removeClass("hide");
-    $("#tbody").addClass("hide");
+    $("P").show();
+    $("#tbody").hide();
   }
  }) 
- 
-
  }
 
 
- delete(data:any){
-  this.appservice.delete(data).subscribe(( )=>{ 
-    location.reload();
+//  delete(data:any){
+//   this.appservice.delete(data).subscribe(( )=>{ 
+//     location.reload();
     
-   })
-  }
+//    })
+//   }
 
   autocomplete($event:any){
     if(this.InputBoxValue==''){
-      $("#ulautocomplete").addClass("hide");
+      $("#ulautocomplete").hide();
     }
-$('#ulautocomplete').removeClass("hide");
+// $('#ulautocomplete').show();
 this.search.name= (<HTMLInputElement>document.getElementById('Username')).value;
-
-
 if (this.search.name.length > 2) {
-  
-  this.appservice.search(this.search).subscribe(( data:any)=>{ 
+   this.appservice.search(this.search).subscribe(( data:any)=>{ 
     this.options=data;
-    $("#ulautocomplete").removeClass("hide");
+    $("#ulautocomplete").show();
     
     })
-
-}
-
   }
-  selectedname(name:any){
-    
-    this.InputBoxValue=name;
-    
-    $("#ulautocomplete").addClass("hide");
-    if(this.InputBoxValue==''){
-      $("#ulautocomplete").addClass("hide");
-    }
-
-    }
-   
-
 }
+
+  selectedname(name:any){
+    this.InputBoxValue=name;
+     $("#ulautocomplete").hide();
+    if(this.InputBoxValue==''){
+      $("#ulautocomplete").hide();
+    }
+  }
+  
+  
+  }
+
+

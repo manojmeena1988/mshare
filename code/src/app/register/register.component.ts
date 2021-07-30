@@ -16,15 +16,14 @@ error:any=' ';
 add(inputdata:any){
 console.log(inputdata);
 this.UserData=inputdata;
-if(this.UserData.confirmpassword!='' && this.UserData.password!='' && this.UserData.username!='' && this.UserData.usermobile_no!='' && this.UserData.useremail!='')
+if(this.UserData.confirmpassword!='' && this.UserData.password!='' && this.UserData.username!='' && this.UserData.usermobile_no!='' && this.UserData.useremail!='' && this.UserData.total_shares!='')
 {
 if(this.UserData.confirmpassword==this.UserData.password)
 { this.error=' ';
   
   // call api 
   this.appservice.register(this.UserData ).subscribe((data: any)=>{ 
- console.log(typeof(data));
- console.log(data.message);
+
  if(data.message=="user updated"){
    alert("user added");
    window.location.reload();
