@@ -13,11 +13,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AnimationComponent } from './animation/animation.component';
 import { RegisterComponent } from './register/register.component';
+import { UserComponent } from './user/user.component';
+
 const appRoutes:Routes=[
 {path: '',component:LoginComponent},
 {path: 'resetpassword',component:ForgotpasswordComponent},
 {path:'dashboard',component:DashboardComponent },
-{path:'dashboard/register',component:RegisterComponent}
+{path:'dashboard/register',component:RegisterComponent},
+{path:'dashboard/user',component:UserComponent}
 
 
 
@@ -30,6 +33,8 @@ const appRoutes:Routes=[
     DashboardComponent,
     AnimationComponent,
     RegisterComponent,
+    UserComponent,
+    
    
   ],
   imports: [
@@ -38,6 +43,7 @@ const appRoutes:Routes=[
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    
 RouterModule.forRoot(appRoutes)
   ],
   providers: [ UserService],

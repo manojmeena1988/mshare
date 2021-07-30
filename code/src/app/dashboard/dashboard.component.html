@@ -29,14 +29,36 @@
         <form class="row g-3" #userForm="ngForm" (ngSubmit)="Search(userForm.value)">
           <div class="col">
             <label for="Username" class="visually-hidden">Username</label>
-            <input
+          <input
               type="text"
               class="form-control"
               id="Username"
               name="username"
               ngModel
+              autocomplete="off"
               placeholder="Username"
-              [(ngModel)]="InputBoxValue">
+              [(ngModel)]="InputBoxValue"  (keyup)="autocomplete($event)" 
+            >  
+            <ul class="list-group hide " id="ulautocomplete">
+              <li *ngFor="let options of options"  class="list-group-item" (click)="selectedname(options.name)" > {{options.name}}</li>
+              
+                  </ul>
+              <!-- <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Username</mat-label>
+                <input type="text"   ngModel  class="form-control"
+                     id="Username"
+                       placeholder="username"
+                       [(ngModel)]="InputBoxValue"
+                       matInput
+                       [formControl]="myControl"
+                       [matAutocomplete]="auto">
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                    {{option}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field> -->
+
             </div>
                  <div class="col-auto">
               <button type="submit" class="btn btn-primary mb-3"  >Search</button>
@@ -73,12 +95,13 @@
                   <tr *ngFor="let userdetail of userdetail">
                        
                     <td>{{userdetail.id}}</td>
-                    <td>{{userdetail.name}}</td>
+                    <td><a routerLink="user"> {{userdetail.name}}</a></td>
                     <td>{{userdetail.email}}</td>
                     <td>{{userdetail.mobile_number}}</td>
-                    <td> <button (click)="delete( userdetail)">Delete</button>  </td>
+                  
                   </tr> 
                 </tbody>
+               
               </table> 
                 
             </div>

@@ -38,5 +38,10 @@ public delete(data:any){
     'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'  }});
 
  }
+ public search(data:any ){
+  return this.http.post('http://localhost/PROJECT1/src/app/API/inputoption.php',data,{headers: {
+    'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'  }});
+
+ }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { Autocomplete } from 'src/app/autocomplete';
 declare var $:any;
 @Component({
   selector: 'app-dashboard',
@@ -11,13 +12,19 @@ export class DashboardComponent implements OnInit {
   selectedUserName:any;
   userdetail:any;
   InputBoxValue:any;
- 
+  options:any;
+  search:any={
+    name:' '
+  };
+  selected_name:any;
+  
    constructor(private appservice:UserService) {
-     
+   
  }
  
    ngOnInit(): void {
-   }
+   
+    }
  
  
    
@@ -42,17 +49,46 @@ export class DashboardComponent implements OnInit {
   }
  }) 
  
- //jquery code
-  // $("div").removeClass("hide");
-  // $("div").addClass("show");
-  //  this.InputBoxValue=" ";
+
  }
 
 
  delete(data:any){
   this.appservice.delete(data).subscribe(( )=>{ 
-    window.location.reload();
+    location.reload();
+    
    })
   }
+
+  autocomplete($event:any){
+    if(this.InputBoxValue==''){
+      $("#ulautocomplete").addClass("hide");
+    }
+$('#ulautocomplete').removeClass("hide");
+this.search.name= (<HTMLInputElement>document.getElementById('Username')).value;
+
+
+if (this.search.name.length > 2) {
+  
+  this.appservice.search(this.search).subscribe(( data:any)=>{ 
+    this.options=data;
+    $("#ulautocomplete").removeClass("hide");
+    
+    })
+
+}
+
+  }
+  selectedname(name:any){
+    
+    this.InputBoxValue=name;
+    
+    $("#ulautocomplete").addClass("hide");
+    if(this.InputBoxValue==''){
+      $("#ulautocomplete").addClass("hide");
+    }
+
+    }
+   
 
 }
