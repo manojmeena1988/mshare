@@ -9,27 +9,23 @@ $conn = new mysqli("localhost", "root","", "project2");
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
+$id=$post;
+$wihdrawAmount;
+$myArr=array();
+$sql1 = "SELECT  wihdrawAmount  FROM withdraw WHERE userid=$id";
+$result1 = $conn->query($sql1);
 
- $Id=$post;
-
-
-
- $sql="DELETE FROM user
-WHERE id = $Id";
- $result=mysqli_query($conn, $sql);
- $myArr = array();
- if ($conn->query($sql) === TRUE) {
-  $myArr=[
-    'message'=>"Record deleted successfully"
-]; 
-  
-} else {
- 
-  $myArr=[
-    'message'=>"Error deleting record"
-  ]; 
-}
+if ($result1->num_rows > 0) {
+    // output data of each row
+    while($row = $result1->fetch_assoc()) {
+      $wihdrawAmount =$row["wihdrawAmount"];
+    }
+    $myArr=[
+      'response'=>$wihdrawAmount 
+      ];
+  }
 $myArr= json_encode($myArr);
 echo $myArr;
 
+ 
 ?>

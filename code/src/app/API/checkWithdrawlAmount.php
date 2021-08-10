@@ -10,26 +10,40 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
- $Id=$post;
+
+$userId = $post;
+$sql = "SELECT * FROM  deposite WHERE userId = $userId AND withdrawMoney !=0";
+$result = $conn->query($sql);
+$myArr = array();
 
 
 
- $sql="DELETE FROM user
-WHERE id = $Id";
- $result=mysqli_query($conn, $sql);
- $myArr = array();
- if ($conn->query($sql) === TRUE) {
-  $myArr=[
-    'message'=>"Record deleted successfully"
-]; 
-  
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+
+    $myArr=[
+        'message'=>"yes"
+    ]; 
+    $myArr= json_encode($myArr);
+    echo $myArr;
+
+
+  }
 } else {
- 
   $myArr=[
-    'message'=>"Error deleting record"
-  ]; 
-}
+    'message'=>"no"
+]; 
 $myArr= json_encode($myArr);
 echo $myArr;
+
+}
+
+
+
+
+
+
 
 ?>

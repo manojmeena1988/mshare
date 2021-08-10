@@ -9,27 +9,27 @@ $conn = new mysqli("localhost", "root","", "project2");
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-
- $Id=$post;
-
-
-
- $sql="DELETE FROM user
-WHERE id = $Id";
- $result=mysqli_query($conn, $sql);
- $myArr = array();
- if ($conn->query($sql) === TRUE) {
-  $myArr=[
-    'message'=>"Record deleted successfully"
-]; 
-  
-} else {
+$userId = $post;
+$sql = "SELECT * FROM  deposite WHERE userId = $userId";
+$result = $conn->query($sql);
+$myArr = array();
+if ($result->num_rows > 0) {
+  while($row = $result->fetch_assoc()) {
  
-  $myArr=[
-    'message'=>"Error deleting record"
+ $total_rows = mysqli_num_rows ($result );
+ $myArr=[
+      'message'=>"$total_rows"
   ]; 
+ }
+} else {
+  $myArr=[
+    'message'=>"0 results"
+]; 
 }
+
 $myArr= json_encode($myArr);
 echo $myArr;
+
+
 
 ?>

@@ -10,35 +10,38 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$name=$post->username;
-$email=$post->useremail;
-$phone_no=$post->usermobile_no;
-$password=$post->password;
-$total_shares=$post->total_shares;
 
-
-$sql = "SELECT * FROM user WHERE mobile_number='".$phone_no."'";
+$mobile_number=$post;
+$userid;
+$myArr=array();
+$res=array();
+$sql = "SELECT id FROM user WHERE mobile_number=$mobile_number";
 $result = $conn->query($sql);
-
-$myArr = array();
 if ($result->num_rows > 0) {
 while($row = $result->fetch_assoc()) {
-$myArr[] = $row;
+  $userid = $row['id'];
+}
 }
 
 
-
-
+$sql1 = "SELECT * FROM deposite WHERE userId=$userid";
+$result1 = $conn->query($sql1);
+if ($result->num_rows > 0) {
+while($r=mysqli_fetch_object($result1))
+{
+    $res[]=$r;
 }
-else{
-    $sql2 = "INSERT INTO user (name,	mobile_number,  father_name,	password,OTP,total_shares)
-    VALUES ( '".$name ."', '".$phone_no."', '".$email."','".$password."',6767,$total_shares)";
-    $result2=mysqli_query($conn, $sql2);
-  $myArr=[
-      'message'=>"user updated"
-  ];
- 
-}
-$myArr= json_encode($myArr);
+
+ $myArr= json_encode($res);
+ echo $myArr;
+}else{
+  $res=[
+    'message'=>'Error'
+];
+$myArr= json_encode($res);
 echo $myArr;
-?>
+}
+
+
+
+ ?>

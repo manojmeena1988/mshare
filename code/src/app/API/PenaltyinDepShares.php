@@ -10,24 +10,25 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
- $Id=$post;
+$userid=$post;
+$penalty;
+$myArr = array();
+$sql = "SELECT penalty FROM  deposite WHERE userId=$userid  ORDER BY installment_no ASC ";
+$result = $conn->query($sql);
 
-
-
- $sql="DELETE FROM user
-WHERE id = $Id";
- $result=mysqli_query($conn, $sql);
- $myArr = array();
- if ($conn->query($sql) === TRUE) {
-  $myArr=[
-    'message'=>"Record deleted successfully"
-]; 
+if ($result->num_rows > 0) {
   
-} else {
- 
+  while($row = $result->fetch_assoc()) {
+    $penalty= $row["penalty"];
+  }
+
   $myArr=[
-    'message'=>"Error deleting record"
-  ]; 
+    'penalty'=>$penalty
+];
+} else {
+    $myArr=[
+        'penalty'=>'0'
+    ];
 }
 $myArr= json_encode($myArr);
 echo $myArr;

@@ -40,18 +40,7 @@ $response="password updated";
   $response="you enter wrong mobile number/OTP ";
 }
 
-// $myJSON = json_encode($myArr);
 
-
-// if ($myArr[0]['OTP']==$OTP && $myArr[0]['mobile_number']==$mobile_no) {
-//   $sql1=$sql = "UPDATE user SET password='".$new_password."' WHERE mobile_number='".$mobile_no."' ";
-//   $result2=mysqli_query($conn, $sql1);
-//   $response="password updated";
-
-// }
-// else{
-//   $response="you enter wrong mobile number/OTP ";
-// }
 
 
 $myJSON = json_encode($response);

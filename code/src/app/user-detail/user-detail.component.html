@@ -1,0 +1,82 @@
+
+  <app-animation></app-animation>
+
+  <div class="page dashboard-page">
+    <div class="container">
+      <div class="header">
+        <h5 class="text-center pt-5 fw-bold">Welcome to mShare</h5>
+      </div>
+     
+<br><br>
+     
+<div class="container">
+  <h6 class="text-center pt-5 fw-bold">withdraw Details</h6>      
+  <table class="table">
+
+    <thead>
+      <tr>
+        <th>User Id</th>
+        <th>User Name</th>
+        <th>Withdraw Amount</th>
+        <th>deposite type</th>
+        <th>Total Deposite Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{withdrawDetail.userid}}</td>
+        <td>{{withdrawDetail.name}}</td>
+       <td>{{wihdrawAmount}}</td>
+        <td>{{withdrawDetail.typeOfDeposite}}</td>
+        <td>{{TotalAmount}}</td>
+      </tr>
+     
+      
+    </tbody>
+  </table>
+</div>
+     
+
+<h5 class="text-center pt-5 fw-bold">User All Deposite detail</h5>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">User ID</th>
+            <th scope="col">Username</th>
+            <th scope="col">Date</th>
+            <th scope="col">Total Shares</th>
+            <th scope="col">Deposite Shares</th>
+            <th scope="col">Deposite Amount</th>
+            <th scope="col">Installment No.</th>
+            <th scope="col">Penalty</th>
+            <th scope="col">EMI</th>
+            <th scope="col">Interest</th>
+            <th scope="col"> Withdrawl Money</th>
+          </tr>
+        </thead>
+        <tbody>
+          <h6>{{Error}}</h6>
+          <tr  *ngFor="let userdata of userdata" >
+         
+            <td>{{userdata.userId}}</td>
+            <td>{{userdata.name}}</td>
+            <td>{{userdata.date}}</td>
+            <td>{{userdata.total_shares}}</td>
+            <td>{{userdata.deposite_shares}}</td>
+            <td>{{userdata.deposite_amount}}</td>
+            <td>{{userdata.installment_no}}</td>
+            <td>{{userdata.penalty}}</td>
+            <td>{{userdata.EMI}}</td>
+            <td>{{userdata.INTEREST}}</td>
+            <td>{{userdata.withdrawMoney}}</td>
+          </tr>
+      
+        </tbody>
+      </table>
+          </div>
+        </div>  
+              
+       
+      
+

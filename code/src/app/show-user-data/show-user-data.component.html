@@ -1,0 +1,50 @@
+
+  <app-animation></app-animation>
+
+  <div class="page login-page">
+      <div class="header">
+          <div class="container">
+              <h3 class="text-center pt-5 fw-bold">Welcome to mShare</h3>                
+          </div>
+      </div>
+      <form #userForm="ngForm" (ngSubmit)="check(userForm.value)">
+      <div class="form-wrapper">
+          <div class="title">
+              <h2 class="">Login</h2>
+              <p><small>Enter your credentials here to access </small></p>
+          </div>
+          <div class="form-content">
+              <div class="form-group">
+                  <span class="form-control-wrap">
+                      <input type="text" name="usermobile_no"  #mobile_number="ngModel" id="mobile" ngModel class="form-control" required   placeholder="Mobile Number" >
+                  </span>
+                  <span 
+                  *ngIf="mobile_number.invalid && mobile_number.touched"
+                  class="error" style="color:rgb(149, 61, 61);">phone no. can't be empty</span>
+              </div>
+              <div class="form-group ">
+                  <span class="form-control-wrap">
+                      <input type="password" name="password" id="pass" #Password="ngModel" ngModel required class="form-control" placeholder="Password">
+                  </span>
+                  
+                  <span 
+                  *ngIf="Password.invalid && Password.touched"
+                  class="error" style="color:rgb(149, 61, 61);">password can't be empty</span>
+              </div>
+              <span>{{warning}}</span>
+              <div class="form-group">
+                  <span class="form-control-wrap d-grid">
+                      <button id="" class="btn btn-primary" type="submit"> Login</button>
+                      
+                  </span>
+              </div>
+              <div class="text-center"><small><a routerLink="resetpassword" class="btn btn-link btn-sm"  (click)="sentotp()">Forgot Password</a></small></div>
+          </div>
+      </div>
+  </form>
+  </div>
+
+
+
+
+

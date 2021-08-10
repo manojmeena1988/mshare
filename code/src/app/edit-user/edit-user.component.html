@@ -1,0 +1,65 @@
+
+<app-animation></app-animation>
+
+<div class="page login-page">
+    <div class="header">
+        <div class="container">
+            <h3 class="text-center pt-5 fw-bold">Welcome to mShare</h3>                
+        </div>
+    </div>
+    <form #userForm="ngForm" (ngSubmit)="update(userForm.value)">
+    <div class="form-wrapper">
+        <div class="title">
+            <h2 class="">Edit</h2>
+            
+        </div>
+        <div class="form-content">
+
+          <div class="form-group">
+              
+              <span class="form-control-wrap">
+                  <label>User Name</label>
+                  <input type="text" name="username" [ngModel]="userName"   id="username" ngModel class="form-control" required   >
+              </span>
+            </div>
+        
+            <div class="form-group">
+                <span class="form-control-wrap">
+                    <label>Phone No.</label>
+                    <input type="text" name="usermobile_no"  [ngModel]="phoneNumber"   id="mobile" ngModel class="form-control" required    >
+                </span>
+            </div>          
+           
+       
+            <div class="form-group">
+              <span class="form-control-wrap">
+                <label>Father Name</label>
+                  <input type="text" name="father_name"  [ngModel]="fatherName"  id="father_name" ngModel class="form-control" required    >
+              </span>
+            </div>
+              
+          
+          <div class="form-group">
+              <span class="form-control-wrap">
+                <label>Total Shares</label>
+                  <input type="text" name="total_shares"  [ngModel]="totalShares"   id="total_shares" ngModel class="form-control" required   >
+              </span>
+              </div>
+         
+           
+              
+          </div>
+         
+            <div class="form-group">
+                <span class="form-control-wrap d-grid">
+                    <button id="" class="btn btn-primary" type="submit"> Update</button>
+                    
+                </span>
+            </div>
+         
+           
+        </div>
+    
+</form>
+</div>
+
